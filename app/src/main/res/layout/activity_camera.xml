@@ -8,16 +8,6 @@
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
          TextureView, etc. -->
-    <TextView
-        android:id="@+id/fullscreen_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:keepScreenOn="true"
-        android:text="@string/dummy_content"
-        android:textColor="#33b5e5"
-        android:textSize="50sp"
-        android:textStyle="bold" />
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
@@ -36,22 +26,46 @@
             android:orientation="horizontal"
             tools:ignore="UselessParent">
 
-            <Button
-                android:id="@+id/dummy_button"
-                style="?metaButtonBarButtonStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/dummy_button" />
-
         </LinearLayout>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/button"
-            android:layout_gravity="left|bottom" />
+        <SurfaceView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/surfaceView"
+            android:background="#FFFFFF" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:id="@+id/imageButton"
+            android:layout_gravity="center_horizontal|bottom"
+            android:contentDescription="@string/camerabutton"
+            android:background="@drawable/camerabutton" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:id="@+id/imageButton2"
+            android:layout_gravity="left|bottom"
+            android:contentDescription="@string/matchbutton"
+            android:background="@drawable/matchbutton" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:id="@+id/imageButton3"
+            android:layout_gravity="right|bottom"
+            android:contentDescription="@string/librarybutton"
+            android:background="@drawable/librarybutton" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:id="@+id/imageButton4"
+            android:layout_gravity="right|top"
+            android:contentDescription="@string/savebutton"
+            android:background="@drawable/savebutton" />
+
     </FrameLayout>
 
 </FrameLayout>

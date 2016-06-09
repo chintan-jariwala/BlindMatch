@@ -91,7 +91,7 @@ public class Camera extends AppCompatActivity {
 
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
-        mContentView = findViewById(R.id.fullscreen_content);
+        mContentView = findViewById(R.id.surfaceView);
 
 
         // Set up the user interaction to manually show or hide the system UI.
@@ -105,7 +105,7 @@ public class Camera extends AppCompatActivity {
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
-        findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+        findViewById(R.id.surfaceView).setOnTouchListener(mDelayHideTouchListener);
     }
 
     @Override
