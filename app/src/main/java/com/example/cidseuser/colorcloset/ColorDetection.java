@@ -3,12 +3,110 @@ package com.example.cidseuser.colorcloset;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
 /**
  * Created by cidseuser on 6/8/2016.
  */
 public class ColorDetection {
 
-    public int getDominantColor(Bitmap bitmap){
+    String color;
+
+    public ColorDetection(Bitmap image) throws Exception{
+
+        int height = image.getHeight();
+        int width = image.getWidth();
+
+        Map m = new HashMap();
+
+        for(int i = 0; i < width; i++){
+
+            for(int j = 0; j < height; j++){
+
+                int rgb = image.getPixel(i, j);
+                int[] rgbArr = getRGBArr(rgb);
+
+                if(!isGray(rgbArr)){
+
+                    Integer counter = (Integer) m.get(rgb);
+                    if(counter == null){
+                        counter = 0;
+                    }
+                    counter++;
+                    m.put(rgb, counter);
+
+                }
+
+            }
+
+        }
+
+        String colorHex = getMostCommonColor(m);
+
+    }
+
+    public String getMostCommonColor(Map map){
+
+        List list = new LinkedList(map.entrySet());
+        Collections.sort(list, new Comparator() {
+            @Override
+            public int compare(Object o1, Object o2) {
+                return ((Comparable)((Map.Entry)(o1)).getValue().compareTo(((Map.Entry)(o2)).getValue());
+            }
+        });
+
+        Map.Entry me = (Map.Entry)list.get(list.size()-1);
+        int[] rgb = getRGBArr((Integer)me.getKey());
+
+        return Integer.toHexString(rgb[0])+" "+Integer.toHexString(rgb[1])+" "+Integer.toHexString(rgb[2]);
+
+    }
+
+    public int[] getRGBArr(int pixel){
+
+        int red = (pixel >> 16) & 0xff;
+        int green = (pixel >> 8) & 0xff;
+        int blue = (pixel) & 0xff;
+
+        return new int[]{red, green, blue};
+
+    }
+
+    public boolean isGray(int[] rgbArr){
+
+        int rgDiff = rgbArr[0] - rgbArr[1];
+        int rbDiff = rgbArr[0] - rgbArr[2];
+
+        int tolerance = 10;
+
+        if(rgDiff > tolerance || rgDiff < -tolerance){
+            if(rbDiff > tolerance || rbDiff < -tolerance){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public String returnColor(){
+
+        if(color.length() == 6){
+            return color.replaceAll("\\s", "");
+        }
+        else{
+            return "ffffff";
+        }
+
+    }
+
+
+    //This actually retrieves the average rgb color
+
+    /*public int getDominantColor(Bitmap bitmap){
 
         if (null == bitmap) return Color.TRANSPARENT;
 
@@ -40,6 +138,10 @@ public class ColorDetection {
                 greenBucket / pixelCount,
                 blueBucket / pixelCount);
 
-    }
+    }*/
+
+    //This retrieves the dominant rbg value in an image
+
+
 
 }
