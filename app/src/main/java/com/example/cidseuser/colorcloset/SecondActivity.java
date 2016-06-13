@@ -1,31 +1,29 @@
 package com.example.cidseuser.colorcloset;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class SecondActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_second);
         GridView gridview = (GridView) findViewById(R.id.gridView);
         gridview.setAdapter(new ImageAdapter(this));
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Toast.makeText(MainActivity.this, "" + position,
+                Toast.makeText(SecondActivity.this, "" + position,
                         Toast.LENGTH_SHORT).show();
             }
         });
@@ -56,11 +54,13 @@ public class MainActivity extends AppCompatActivity {
 
         }
         private Integer [] mThumbIds = {
-                R.drawable.shirt2,
-                R.drawable.shirt3,
-                R.drawable.shirt,
-                R.drawable.shirt4
 
-        };
-    }}
+                R.drawable.shorts,
+                R.drawable.shorts2,
+                R.drawable.shorts3,
+                R.drawable.pants,
+                R.drawable.pants2,
+                R.drawable.skirt,
+                R.drawable.skirt2
 
+        }
