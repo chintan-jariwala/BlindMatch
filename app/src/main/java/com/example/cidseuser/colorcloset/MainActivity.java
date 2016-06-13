@@ -20,61 +20,87 @@ public class MainActivity extends AppCompatActivity {
 
 package com.example.cidseuser.colorcloset;
 import java.util.ArrayList;
-import java.util.*;
+import java.lang.Boolean;
+import java.lang.*;
 
-/**
- * Created by cidseuser on 6/10/2016.
- */
 public class Clothing {
 
-    private String hexvalue;
+    public String hexvalue;
+    public Boolean pattern;
 
+    public Clothing(String hvalue, Boolean pat){
+        hexvalue = hvalue;
+        pattern = pat;
+    }
+
+    public interface top{
+    }
+
+    public interface bottom{
+    }
+
+    public interface outer{
+    }
+
+    private ArrayList<shirt> shirt;
+    private ArrayList<cShirt> cShirt;
+    private ArrayList<sweater> sweater;
+    private ArrayList<jacket> jacket;
+    private ArrayList<bottom> bottom;
+    private ArrayList<other> other;
+    private ArrayList<dress> dress;
+
+    public Clothing(ArrayList<shirt>shirt, ArrayList<cShirt> cShirt, ArrayList<sweater> sweater, ArrayList<jacket> jacket, ArrayList<bottom> bottom, ArrayList<other> other, ArrayList<dress> dress){
+        this.shirt = shirt;
+        this.cShirt = cShirt;
+        this.sweater = sweater;
+        this.jacket = jacket;
+        this.bottom = bottom;
+        this.other = other;
+        this.dress = dress;
+    }
 
     public class shirt extends Clothing {
-        public shirt(String hvalue){
-
+        //Here the code will check the hex value and categorize it in one color:
+        public shirt(String hvalue, Boolean pat){
+            super(hvalue, pat);
         }
     }
 
     public class cShirt extends Clothing {
-        public cShirt(String hvalue){
-
+        public cShirt(String hvalue, Boolean pat){
+            super(hvalue, pat);
         }
     }
 
     public class sweater extends Clothing {
-        public sweater(String hvalue){
-
+        public sweater(String hvalue, Boolean pat){
+            super(hvalue, pat);
         }
-
     }
 
     public class jacket extends Clothing {
-        public jacket(String hvalue){
-
+        public jacket(String hvalue, Boolean pat){
+            super(hvalue, pat);
         }
-
     }
 
     public class bottom extends Clothing {
-        public bottom(String hvalue){
-
+        public bottom(String hvalue, Boolean pat){
+            super(hvalue, pat);
         }
-
     }
 
     public class other extends Clothing {
-        public other(String hvalue){
-
+        public other(String hvalue, Boolean pat){
+            super(hvalue, pat);
         }
-
     }
 
     public class dress extends Clothing {
-        public dress(String hvalue){
-
+        public dress(String hvalue, Boolean pat){
+            super(hvalue, pat);
         }
-
     }
 
 }
