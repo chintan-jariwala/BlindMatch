@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Color Closet</string>
+
+    <string-array name="type_of_clothing">
+        <item>Shirt</item>>
+        <item>Bottoms</item>
+    </string-array>
+
 </resources>
