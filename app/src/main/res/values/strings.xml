@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Color Closet</string>
+    <string name="selectionimage">selectionImage</string>
+    <string name="color">(color)</string>
+    <string name="selection">selection</string>
 </resources>

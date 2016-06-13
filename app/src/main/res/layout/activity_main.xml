@@ -7,10 +7,42 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.cidseuser.colorcloset.MainActivity">
+    tools:context="com.example.cidseuser.colorcloset.MainActivity"
+    android:background="#FFFFFF">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/color"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000000"
+        android:paddingBottom="15dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/shirtexample"
+        android:contentDescription="@string/selection" />
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnWidth="90dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="2dp"
+        android:horizontalSpacing="10dp"
+        android:stretchMode="columnWidth"
+        android:gravity="top|center"
+
+        android:id="@+id/gridView"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        tools:listitem="@android:layout/simple_list_item_1"
+        android:layout_alignParentEnd="false" />
 </RelativeLayout>
