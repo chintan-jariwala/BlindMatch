@@ -7,17 +7,15 @@ import java.lang.*;
 /**
  * Created by cidseuser on 6/13/2016.
  */
-public class Clothing {
+public abstract class Clothing {
 
-    public String hexvalue;
-    //public Boolean pattern;
-
-    public Clothing(String hvalue){
-        hexvalue = hvalue;
+    public clothing(int rgb, String[] tags, sring description) {
+        color = Color.parseColor(rgb);
     }
 
     private ArrayList<Top> tops;
     private ArrayList<Bottom> bottoms;
+    private Color color;
 
     public Clothing(ArrayList<Top> tops, ArrayList<Bottom> bottoms){
         this.tops = tops;
@@ -25,18 +23,14 @@ public class Clothing {
     }
 
     public class Top extends Clothing {
-        //Here the code will check the hex value and categorize it in one color:
-        public Top(String hvalue){
-            super(hvalue);
+        public Top(String c){
+            super(c);
         }
     }
 
     public class Bottom extends Clothing {
-        public Bottom(String hvalue){
-            super(hvalue);
+        public Bottom(String c){
+            super(c);
         }
     }
-
-
-
 }
