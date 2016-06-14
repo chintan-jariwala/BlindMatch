@@ -1,26 +1,29 @@
-package com.example.cidseuser.colorcloset;
+package com.example.mark.myapplication;
 import android.graphics.Color;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by cidseuser on 6/13/2016.
  */
 public class Wardrobe {
 
-    public Wardrobe(List<Clothing> c) {
-        clothes = c;
+    public Wardrobe(List<Clothing> tops, List<Clothing> bottoms){
+        this.tops = tops;
+        this.bottoms = bottoms;
     }
 
-    privste ArrayList<Clothing> clothes;
+    private List<Clothing> tops;
+    private List<Clothing> bottoms;
 
-    public ArrayList<Clothing> getTops(){
+    public List<Clothing> getTops(){
         // todo: return only tops
-        return c;
+        return tops;
     }
 
-    public ArrayList<Clothing> getBottoms(){
+    public List<Clothing> getBottoms(){
         // todo: return only bottoms
-        return c;
+        return bottoms;
     }
 }
