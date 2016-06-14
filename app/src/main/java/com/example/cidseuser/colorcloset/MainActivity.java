@@ -15,10 +15,23 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button bottoms;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+       bottoms = (Button) findViewById(R.id.button2);
+        bottoms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,
+                        SecondActivity.class);
+                startActivity(intent);
+            }
+        });
+
         GridView gridview = (GridView) findViewById(R.id.gridView);
         gridview.setAdapter(new ImageAdapter(this));
 
@@ -64,15 +77,9 @@ public class MainActivity extends AppCompatActivity {
         };
     }
     
-    Button bottoms = (Button) findViewById(R.id.button2); bottoms.setOnClickListener( new View.OnClickListener()
-
-    {
-        @Override public void onClick (View v){
-        startActivity(new Intent(MainActivity.this, SecondActivity.class));
 
     }
-    }
-}
+
 
 
 
