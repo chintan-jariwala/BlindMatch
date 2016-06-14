@@ -7,16 +7,32 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
+import android.content.Intent;
 
 public class SecondActivity extends AppCompatActivity {
+
+    Button tops;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+
+        tops = (Button) findViewById(R.id.button);
+        tops.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SecondActivity.this,
+                        MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
         GridView gridview = (GridView) findViewById(R.id.gridView);
         gridview.setAdapter(new ImageAdapter(this));
 
@@ -28,6 +44,7 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
     }
+
     public class ImageAdapter extends BaseAdapter {
         private Context mContext;
 
@@ -35,7 +52,7 @@ public class SecondActivity extends AppCompatActivity {
             mContext = c;
         }
 
-        public int getCount () {
+        public int getCount() {
             return mThumbIds.length;
         }
 
@@ -43,17 +60,18 @@ public class SecondActivity extends AppCompatActivity {
             return null;
         }
 
-        public long getItemId(int position){
+        public long getItemId(int position) {
             return 0;
         }
 
-        public View getView (int position, View convertView, ViewGroup parent) {
+        public View getView(int position, View convertView, ViewGroup parent) {
             ImageView imageView = new ImageView(mContext);
             imageView.setImageResource(mThumbIds[position]);
             return imageView;
 
         }
-        private Integer [] mThumbIds = {
+
+        private Integer[] mThumbIds = {
 
                 R.drawable.shorts,
                 R.drawable.shorts2,
@@ -63,4 +81,6 @@ public class SecondActivity extends AppCompatActivity {
                 R.drawable.skirt,
                 R.drawable.skirt2
 
-        }
+        };
+    }
+}
