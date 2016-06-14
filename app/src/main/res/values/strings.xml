@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Color Closet</string>
+
+    <string name="title_activity_camera">Camera</string>
+    <string name="camerabutton">CameraButton</string>
+    <string name="librarybutton">libraryButton</string>
+    <string name="matchbutton">matchButton</string>
+    <string name="savebutton">saveButton</string>
 </resources>
