@@ -28,12 +28,6 @@
 
         </LinearLayout>
 
-        <SurfaceView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/surfaceView"
-            android:background="#FFFFFF" />
-
         <ImageButton
             android:layout_width="100dp"
             android:layout_height="80dp"
@@ -41,14 +35,6 @@
             android:layout_gravity="center_horizontal|bottom"
             android:contentDescription="@string/camerabutton"
             android:background="@drawable/camerabutton" />
-
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:id="@+id/imageButton2"
-            android:layout_gravity="left|bottom"
-            android:contentDescription="@string/matchbutton"
-            android:background="@drawable/matchbutton" />
 
         <ImageButton
             android:layout_width="100dp"
@@ -62,7 +48,7 @@
             android:layout_width="100dp"
             android:layout_height="80dp"
             android:id="@+id/imageButton4"
-            android:layout_gravity="right|top"
+            android:layout_gravity="left|bottom"
             android:contentDescription="@string/savebutton"
             android:background="@drawable/savebutton" />
 
