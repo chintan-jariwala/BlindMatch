@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void cameraClicked (View view) {
-        Intent intent = new Intent(this, CameraActivity.class);
+        Intent intent =new Intent(this, CameraActivity.class);
         startActivity(intent);
     }
 
