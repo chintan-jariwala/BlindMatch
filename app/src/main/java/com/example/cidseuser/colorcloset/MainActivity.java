@@ -1,6 +1,8 @@
 //package com.example.mark.myapplication;
 package com.example.cidseuser.colorcloset;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.net.Uri;
 import android.nfc.Tag;
@@ -28,6 +30,9 @@ import android.widget.Toast;
 //import com.google.android.gms.appindexing.AppIndex;
 //import com.google.android.gms.common.api.GoogleApiClient;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.*;
 import static junit.framework.Assert.*;
@@ -43,11 +48,13 @@ public class MainActivity extends AppCompatActivity {
 
             //test test
     Button bottoms;
+    private View imgPicture;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        imgPicture = findViewById(R.id.gridView);
         bottoms = (Button) findViewById(R.id.button2);
         bottoms.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }
         });
+
+        loadImageFromStorage();
 //        // ATTENTION: This was auto-generated to implement the App Indexing API.
 //        // See https://g.co/AppIndexing/AndroidStudio for more information.
 //        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -226,6 +235,40 @@ public class MainActivity extends AppCompatActivity {
 
     //TODO: ask mentor how to set  up a unit test project and how to use it to run tests
 
+    /*public void onImageGalleryClicked(View v){
+        Intent photoPickerIntent
+    }*/
+
+//    @Override
+//    public void startActivityForResult(Intent intent, int requestCode, Bundle options) {
+//        super.startActivityForResult(intent, requestCode, options);
+//        startActivityForResult();
+//    }
+//
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+//        if(resultCode == RESULT_OK){
+//            if(requestCode == IMAGE_GALLERY_REQUEST){
+//
+//            }
+//        }
+//    }
+
+    private void loadImageFromStorage()
+    {
+
+        try {
+            File f=new File("/storage/emulated/0/Android/data/com.example.cidseuser.colorcloset/files/", "pic.jpg");
+            Bitmap b = BitmapFactory.decodeStream(new FileInputStream(f));
+            ImageView img=(ImageView)findViewById(R.id.imageView);
+            img.setImageBitmap(b);
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+
+    }
 
 }
 
