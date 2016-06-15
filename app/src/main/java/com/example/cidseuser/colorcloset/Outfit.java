@@ -1,7 +1,15 @@
 package com.example.cidseuser.colorcloset;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.net.Uri;
 import android.util.Log;
+import android.widget.Toast;
+import android.widget.ImageView;
 
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.lang.reflect.Array;
 import java.util.List;
 
@@ -10,6 +18,31 @@ import java.util.List;
  * Created by cidseuser on 6/14/2016.
  */
 public class Outfit {
+
+    /*public static final int IMAGE_GALLERY_REQUEST = 20;
+    private gridView imgPicture;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        if(resultCode == RESULT_OK){
+            if(requestCode == IMAGE_GALLERY_REQUEST){
+                Uri imageUri = data.getData();
+                InputStream inputStream;
+                try{
+                    inputStream = getContentResolver().openInputStream(imageUri);
+
+                    Bitmap image = BitmapFactory.decodeStream(inputStream);
+
+
+                }
+                catch (FileNotFoundException e){
+                    e.printStackTrace();
+                    Toast.makeText()
+                }
+            }
+        }
+    }*/
+
     public static int getComplementaryColor(int colorToInvert) {
         float[] hsv = new float[3];
         Color.RGBToHSV(Color.red(colorToInvert), Color.green(colorToInvert),

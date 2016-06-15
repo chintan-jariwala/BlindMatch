@@ -45,4 +45,14 @@
         android:background="#a7000000"
         android:textColor="#ffffff" />
 
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/imageView"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_toRightOf="@+id/button2"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/gridView"
+        android:layout_alignEnd="@+id/gridView" />
+
 </RelativeLayout>
