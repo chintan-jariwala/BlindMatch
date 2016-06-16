@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">Color Closet</string>
-    <string name="tops">Tops</string>
-    <string name="bottoms">Bottoms</string>
+    <string name="picture">Picture</string>
+    <string name="description_info">Info</string>
+    <string name="request_permission">This sample needs camera permission.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="title_activity_camera">Camera</string>
+    <string name="camerabutton">CameraButton</string>
+    <string name="librarybutton">libraryButton</string>
+    <string name="matchbutton">matchButton</string>
+    <string name="savebutton">saveButton</string>
+    <string name="tops">tops</string>
+    <string name="bottoms">bottoms</string>
+
+
 </resources>
