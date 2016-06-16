@@ -12,7 +12,7 @@
     <GridView
         android:id="@+id/gridView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="440dp"
         android:columnWidth="90dp"
         android:numColumns="auto_fit"
         android:verticalSpacing="10dp"
@@ -44,5 +44,25 @@
         android:layout_toEndOf="@+id/button"
         android:background="#d4000000"
         android:textColor="#ffffff" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Choose photo"
+        android:id="@+id/gallery"
+        android:nestedScrollingEnabled="false"
+        android:onClick="cameraClicked"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Choose photo"
+        android:id="@+id/button3"
+        android:nestedScrollingEnabled="false"
+        android:onClick="cameraClicked"
+        android:layout_alignTop="@+id/gallery"
+        android:layout_toEndOf="@+id/button" />
 
 </RelativeLayout>
