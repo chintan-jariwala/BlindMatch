@@ -28,7 +28,7 @@
     <FrameLayout
         android:id="@+id/control"
         android:layout_width="match_parent"
-        android:layout_height="112dp"
+        android:layout_height="88dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:background="@color/control_background">
@@ -51,6 +51,19 @@
             android:padding="20dp" />
         <!--android:src="@drawable/ic_action_info"-->
 
+
     </FrameLayout>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:text="Library"
+        android:id="@+id/library"
+        android:longClickable="false"
+        android:nestedScrollingEnabled="false"
+        android:layout_gravity="right|center_vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
