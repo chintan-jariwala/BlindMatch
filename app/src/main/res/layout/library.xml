@@ -60,7 +60,7 @@
         android:text="Back to Camera"
         android:id="@+id/back_to_camera"
         android:nestedScrollingEnabled="false"
-        android:onClick="cameraClicked"
+        android:onClick="Back_to_Camera"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true" />
 

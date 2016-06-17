@@ -39,7 +39,7 @@ public class Library extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Library.this,
-                        CameraHome.class);
+                       CameraActivity.class);
                 startActivity(intent);
                 }
             });
