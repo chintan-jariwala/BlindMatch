@@ -16,7 +16,7 @@ import android.content.Intent;
 public class Library extends AppCompatActivity {
 
     Button tops;
-
+    Button back_to_camera;
 
 
     @Override
@@ -34,6 +34,15 @@ public class Library extends AppCompatActivity {
             }
         });
 
+        back_to_camera = (Button) findViewById(R.id.back_to_camera);
+        back_to_camera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Library.this,
+                        CameraHome.class);
+                startActivity(intent);
+                }
+            });
 
         GridView gridview = (GridView) findViewById(R.id.gridView);
         gridview.setAdapter(new ImageAdapter(this));

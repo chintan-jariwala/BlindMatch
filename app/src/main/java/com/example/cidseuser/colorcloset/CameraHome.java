@@ -1,8 +1,8 @@
 package com.example.cidseuser.colorcloset;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 public class CameraHome extends AppCompatActivity {
@@ -16,5 +16,8 @@ public class CameraHome extends AppCompatActivity {
     public void cameraClicked (View view) {
         Intent intent =new Intent(this, CameraActivity.class);
         startActivity(intent);
+    }
+
+    public void libraryClicked () {
     }
 }

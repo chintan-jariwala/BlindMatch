@@ -24,6 +24,7 @@ import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.ImageFormat;
@@ -57,6 +58,7 @@ import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.File;
@@ -74,6 +76,8 @@ import java.util.concurrent.TimeUnit;
 
 public class Camera2BasicFragment extends Fragment
         implements View.OnClickListener, FragmentCompat.OnRequestPermissionsResultCallback {
+
+    Button library;
 
     /**
      * Conversion from screen rotation to JPEG orientation.
@@ -430,6 +434,15 @@ public class Camera2BasicFragment extends Fragment
         view.findViewById(R.id.picture).setOnClickListener(this);
         view.findViewById(R.id.info).setOnClickListener(this);
         mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
+        library = (Button) view.findViewById(R.id.library);
+        library.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(getActivity(), Library.class);
+                Toast.makeText(getActivity(),":D",Toast.LENGTH_LONG).show();
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
