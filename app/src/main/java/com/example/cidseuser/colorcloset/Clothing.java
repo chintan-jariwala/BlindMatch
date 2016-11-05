@@ -13,7 +13,11 @@ public class Clothing {
 
     private List<Top> tops;
     private List<Bottom> bottoms;
-    private int color;
+    private String color;
+    private String photofilepath;
+    private int id;
 
-    public int getColor(){ return color; }
+    public String getColor(){ return color; }
+    public String getPhotofilepath(){ return photofilepath; }
+    public int getId(){ return id; }
 }
