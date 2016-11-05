@@ -439,7 +439,7 @@ public class Camera2BasicFragment extends Fragment
             @Override
             public void onClick(View view) {
                 Intent intent =new Intent(getActivity(), Library.class);
-                Toast.makeText(getActivity(),":D",Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(),"",Toast.LENGTH_LONG).show();
                 startActivity(intent);
             }
         });

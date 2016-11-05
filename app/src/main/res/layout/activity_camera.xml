@@ -42,22 +42,6 @@
         <!--android:contentDescription="@string/camerabutton"-->
         <!--android:background="@drawable/camerabutton" />-->
 
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:id="@+id/imageButton3"
-            android:layout_gravity="end|bottom"
-            android:contentDescription="@string/librarybutton"
-            android:background="@drawable/librarybutton" />
-
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:id="@+id/imageButton4"
-            android:layout_gravity="start|bottom"
-            android:contentDescription="@string/savebutton"
-            android:background="@drawable/savebutton" />
-
     </FrameLayout>
 
 </FrameLayout>

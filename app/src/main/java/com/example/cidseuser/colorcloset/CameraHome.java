@@ -19,5 +19,7 @@ public class CameraHome extends AppCompatActivity {
     }
 
     public void libraryClicked () {
+        Intent intent =new Intent(this, CameraActivity.class);
+        startActivity(intent);
     }
 }

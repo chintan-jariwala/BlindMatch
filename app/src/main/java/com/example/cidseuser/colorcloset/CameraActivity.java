@@ -13,7 +13,7 @@ public class CameraActivity extends AppCompatActivity {
 
         if (null == savedInstanceState) {
             getFragmentManager().beginTransaction()
-                    .replace(R.id.container, Camera2BasicFragment.newInstance())
+                    .replace(R.id.container, new CaputreImageFragment())
                     .commit();
         }
     }
