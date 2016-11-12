@@ -1,0 +1,28 @@
+package com.example.cidseuser.colorcloset;
+
+import android.support.v4.app.NavUtils;
+import android.view.Menu;
+import android.view.MenuItem;
+
+/**
+ * Created by Mark on 11/11/2016.
+ */
+public class ClothingFragment {
+
+    @Override
+    public  boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(getActivity());
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+        @Override
+        public void onPause(){
+            super.onPause();
+            SaveClothing.get(getActivity()).saveClothing();
+        }
+    }
+}
