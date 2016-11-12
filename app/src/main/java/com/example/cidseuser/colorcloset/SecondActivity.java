@@ -16,7 +16,7 @@ import android.content.Intent;
 /**
  * Created by cidseuser on 6/14/2016.
  */
-public class SecondActivity {
+public class SecondActivity extends AppCompatActivity{
     Button tops;
 
     @Override
