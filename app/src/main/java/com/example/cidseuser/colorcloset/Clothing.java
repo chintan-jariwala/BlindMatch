@@ -54,4 +54,13 @@ public class Clothing {
         return json;
     }
 
+    public Clothing(JSONObject json) throws JSONException{
+        id = UUID.fromString(json.getString(JSON_ID));
+        if(json.has(JSON_COLOR)){
+            color = json.getString(JSON_COLOR);
+        }
+        if(json.has(JSON_PHOTOFILEPATH)){
+            color = json.getString(JSON_PHOTOFILEPATH);
+        }
+    }
 }
