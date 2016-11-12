@@ -13,7 +13,8 @@ import java.util.UUID;
  */
 public class Clothing {
     public Clothing(int rgb, String[] tags, String description) {
-        color = rgb;
+        int RGB = -1;
+        String Color = Integer.toString(RGB);
     }
 
     private static final String JSON_ID = "id";
