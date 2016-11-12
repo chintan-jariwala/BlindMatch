@@ -28,7 +28,7 @@ public class SaveClothing {
             mClothing = mSerializer.loadClothing();
         }
         catch (Exception e){
-            mClothing = new ArrayList<>(Clothing);
+            mClothing = new ArrayList<>();
             Log.e(TAG, "Error loading clothing: ", e);
         }
     }
@@ -37,7 +37,7 @@ public class SaveClothing {
         mClothing.add(c);
     }
 
-    public boolean saveClothing{
+    public boolean saveClothing(){
         try{
             mSerializer.saveClothing(mClothing);
             Log.d(TAG, "clothing saved to file");
