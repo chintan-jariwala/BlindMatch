@@ -45,7 +45,7 @@ public class CaputreImageFragment  extends Fragment {
                 container, false);
 
         button = (Button) rootView.findViewById(R.id.cameraBtn);
-        imageView = (ImageView) rootView.findViewById(R.id.imageView2);
+        imageView = (ImageView) rootView.findViewById(R.id.imageView3);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,19 +113,19 @@ public class CaputreImageFragment  extends Fragment {
 
                 Bitmap bmp = (Bitmap) data.getExtras().get("data");
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
-
-                bmp.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                int nh = (int) ( bmp.getHeight() * (512.0 / bmp.getWidth()) );
+                bmp.compress(Bitmap.CompressFormat.PNG, 50, stream);
                 byte[] byteArray = stream.toByteArray();
-
-                storeImage(bmp);
+                Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0,
+                        byteArray.length);
+                storeImage(bitmap);
 
 
                 // convert byte array to Bitmap
 
-                Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0,
-                        byteArray.length);
 
-                imageView.setImageBitmap(bitmap);
+
+                imageView.setImageBitmap(bmp);
 
             }
         }
