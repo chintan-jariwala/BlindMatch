@@ -164,8 +164,13 @@ public class MainActivity extends AppCompatActivity {
         //Log.e(TAG, test);
     }
 
-    protected void GetComplementaryColor_of_White_Returns_Black()
-    {
+    protected void Match_Top(){
+        Wardrobe clothes = CreateWardrobe();
+        Outfit outfit = new Outfit();
+        Top shirt =
+    }
+
+    protected void GetComplementaryColor_of_White_Returns_Black() {
         Log.e("Black = {0}", Integer.toString(Color.BLACK));
         assertEquals(Color.WHITE, Outfit.getComplementaryColor(Color.BLACK));
     }
@@ -272,7 +277,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
+    /*@Override
     public  boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
@@ -287,6 +292,9 @@ public class MainActivity extends AppCompatActivity {
     public void onPause(){
         super.onPause();
         SaveClothing.get(getActivity()).saveClothing();
-    }
+    }*/
+
+    /*
+     */
 }
 
