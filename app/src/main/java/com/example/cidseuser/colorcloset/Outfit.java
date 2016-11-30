@@ -2,7 +2,6 @@ package com.example.cidseuser.colorcloset;
 import android.graphics.Color;
 import android.util.Log;
 
-import java.lang.reflect.Array;
 import java.util.List;
 
 
@@ -52,22 +51,22 @@ public class Outfit {
         return result;
     }
 
-    private Top top;
-    private Bottom bottom;
+    private Clothing top;
+    private Clothing bottom;
 
-    public void setTop(Top top){
+    public void setTop(Clothing top){
         this.top = top;
     }
 
-    public Top getTop(){
+    public Clothing getTop(){
         return top;
     }
 
-    public void setBottom(Bottom bottom){
+    public void setBottom(Clothing bottom){
         this.bottom = bottom;
     }
 
-    public Bottom GetBottom(){
+    public Clothing GetBottom(){
         return bottom;
     }
 }

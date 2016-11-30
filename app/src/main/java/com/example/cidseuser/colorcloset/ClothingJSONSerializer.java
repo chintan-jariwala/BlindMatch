@@ -30,36 +30,38 @@ public class ClothingJSONSerializer {
         mFilename = f;
     }
 
-    public void saveClothing(ArrayList<Clothing> clothing)
-        throws JSONException, IOException{
-            //builds array in JSON
-            JSONArray array = new JSONArray();
-            for(Clothing c: clothing){
-                array.put(c.toJSON());
-            }
+    public void saveClothes(ArrayList<Clothing> clothes)
+            throws JSONException, IOException{
+        //builds array in JSON
+        JSONArray array = new JSONArray();
+        for(Clothing c: clothes){
 
-            //write file to disk
-            Writer writer = null;
-            try {
-                OutputStream out = mContext
-                        .openFileOutput(mFilename, mContext.MODE_PRIVATE);
-                writer = new OutputStreamWriter(out);
-                writer.write(array.toString());
-            }
-            catch(FileNotFoundException e) {
-                Log.e("TAG","file not found");
-            }
-            catch(IOException e) {
-                Log.e("TAG","IOException");
-            }
-            finally {
-                if (writer != null)
-                    writer.close();
-            }
+            //TODO: Fix this
+            array.put(c.toJSON());
+        }
+
+        //write file to disk
+        Writer writer = null;
+        try {
+            OutputStream out = mContext
+                    .openFileOutput(mFilename, mContext.MODE_PRIVATE);
+            writer = new OutputStreamWriter(out);
+            writer.write(array.toString());
+        }
+        catch(FileNotFoundException e) {
+            Log.e("TAG","file not found");
+        }
+        catch(IOException e) {
+            Log.e("TAG","IOException");
+        }
+        finally {
+            if (writer != null)
+                writer.close();
+        }
     }
 
-    public ArrayList<Clothing> loadClothing() throws IOException, JSONException{
-        ArrayList<Clothing> clothing = new ArrayList<>();
+    public ArrayList<Clothing> loadClothes() throws IOException, JSONException{
+        ArrayList<Clothing> clothes = new ArrayList<>();
         BufferedReader reader = null;
         try{
             //opens and reads rile into a StringBuilder
@@ -78,7 +80,7 @@ public class ClothingJSONSerializer {
                     .nextValue();
             //Build the array of crimes from JSONObjects
             for (int i = 0; i < array.length(); i++){
-                clothing.add(new Clothing(array.getJSONObject(i)));
+                clothes.add(new Clothing(array.getJSONObject(i)));
             }
         }
         catch(FileNotFoundException e){
@@ -88,7 +90,7 @@ public class ClothingJSONSerializer {
             if(reader != null)
                 reader.close();
         }
-        return clothing;
+        return clothes;
     }
 
 

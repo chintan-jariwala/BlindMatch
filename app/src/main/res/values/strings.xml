@@ -2,4 +2,7 @@
     <string name="app_name">Color Closet</string>
     <string name="tops">Tops</string>
     <string name="bottoms">Bottoms</string>
+    <string name="new_top">New Top</string>
+    <string name="new_bottom">New Bottom</string>
+    <string name="save_clothes">Save Clothes</string>
 </resources>
