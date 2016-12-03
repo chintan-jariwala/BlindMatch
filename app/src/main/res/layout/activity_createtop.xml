@@ -65,4 +65,15 @@
         android:layout_marginEnd="21dp"
         android:layout_marginBottom="40dp" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Take Picture"
+        android:id="@+id/pictureButton"
+        android:layout_below="@+id/editText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="53dp" />
+
+
 </RelativeLayout>
