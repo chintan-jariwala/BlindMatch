@@ -1,7 +1,6 @@
 //package com.example.mark.myapplication;
 package com.example.cidseuser.colorcloset;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -13,12 +12,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.File;
@@ -46,15 +39,15 @@ public class MainActivity extends AppCompatActivity {
 //    private GoogleApiClient client;
 
             //test test
-    Button bottoms;
+    //Button bottoms;
     private View imgPicture;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        imgPicture = findViewById(R.id.gridView);
-        bottoms = (Button) findViewById(R.id.button2);
+        //imgPicture = findViewById(R.id.gridView);
+        /*bottoms = (Button) findViewById(R.id.button2);
         bottoms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,9 +55,9 @@ public class MainActivity extends AppCompatActivity {
                         SecondActivity.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
-        GridView gridview = (GridView) findViewById(R.id.gridView);
+        /*GridView gridview = (GridView) findViewById(R.id.gridView);
         gridview.setAdapter(new ImageAdapter(this));
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -73,24 +66,16 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "" + position,
                         Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
         loadImageFromStorage();
 //        // ATTENTION: This was auto-generated to implement the App Indexing API.
 //        // See https://g.co/AppIndexing/AndroidStudio for more information.
 //        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
-        //test getComplementaryColor method
-        //int test = Outfit.getComplementaryColor(Color.CYAN);
-        //Log.e("MainActivity", "result " + test);
-        // run unit tests
-        //GetComplementaryColor_of_White_Returns_Black();
-
-        //Calling_Filter_On_Outfit_With_Black_Top_Results_In_White_Bottoms();
-        //Calling_Filter_On_Outfit_With_Cyan_Top_Results_In_Red_Bottoms();
     }
 
-    public class ImageAdapter extends BaseAdapter {
+    /*public class ImageAdapter extends BaseAdapter {
         private Context mContext;
 
         public ImageAdapter(Context c) {
@@ -122,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                 R.drawable.shirt4
 
         };
-    }
+    }*/
 
     protected Wardrobe CreateWardrobe() {
         List<Clothing> tops = new ArrayList<Clothing>();
@@ -142,30 +127,7 @@ public class MainActivity extends AppCompatActivity {
         Wardrobe myClothes = new Wardrobe();
 
         return myClothes;
-
-
-        //List<Clothing> test = Filter(myClothes);
-
-        /*public String toString(){
-            String test = tops.toString();
-        }*/
-
-        /*
-        for (Top t : tops) {
-            tops.add(t.toString());
-            return tops;
-        }
-        */
-
-        //String TAG = "MainActivity";
-        //Log.e(TAG, test);
     }
-
-    /*protected void Match_Top(){
-        Wardrobe clothes = CreateWardrobe();
-        Outfit outfit = new Outfit();
-        //Top shirt =
-    }*/
 
     protected void GetComplementaryColor_of_White_Returns_Black() {
         Log.e("Black = {0}", Integer.toString(Color.BLACK));
@@ -274,6 +236,26 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+/*    @Override
+    public  boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                //NavUtils.navigateUpFromSameTask(getActivity());
+                return true;
+            case R.id.menu_item_save_clothes:
+                Toast.makeText(this, "Save Clothes is Selected", Toast.LENGTH_SHORT).show();
+
+                Wardrobe wardrobe = Wardrobe.get(getApplicationContext());
+                wardrobe.save();
+                return true;
+            case R.id.menu_item_new_top:
+                startCreateTopActivity();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }*/
+
     @Override
     public  boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -285,6 +267,12 @@ public class MainActivity extends AppCompatActivity {
 
                 Wardrobe wardrobe = Wardrobe.get(getApplicationContext());
                 wardrobe.save();
+                return true;
+            case R.id.menu_item_new_bottom:
+                startBottomActivity();
+                return true;
+            case R.id.menu_item_new_top:
+                startTopActivity();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -303,5 +291,16 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.main_menu, menu);
         return true;
     }
+
+    protected void startTopActivity(){
+        Intent intent = new Intent(MainActivity.this, TopActivity.class);
+        startActivity(intent);
+    }
+
+    protected void startBottomActivity(){
+        Intent intent = new Intent(MainActivity.this, BottomActivity.class);
+        startActivity(intent);
+    }
+
 }
 
